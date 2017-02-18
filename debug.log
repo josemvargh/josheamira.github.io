@@ -10,3 +10,11 @@
 [0218/143422.280:ERROR:registration_protocol_win.cc(84)] TransactNamedPipe: Ha terminado la canalización. (0x6D)
 [0218/143422.281:ERROR:crash_report_database_win.cc(563)] CreateDirectory C:\Program Files (x86)\reports: Acceso denegado. (0x5)
 [0218/143422.315:ERROR:crashpad_client_win.cc(660)] crash server failed to launch, no dump captured
+[0218/143745.851:ERROR:crash_report_database_win.cc(563)] CreateDirectory C:\Program Files (x86)\reports: Acceso denegado. (0x5)
+[0218/143745.857:ERROR:registration_protocol_win.cc(84)] TransactNamedPipe: Ha terminado la canalización. (0x6D)
+[0218/143745.859:ERROR:crash_report_database_win.cc(563)] CreateDirectory C:\Program Files (x86)\reports: Acceso denegado. (0x5)
+[0218/143745.888:ERROR:crashpad_client_win.cc(660)] crash server failed to launch, no dump captured
+[0218/143910.506:ERROR:crash_report_database_win.cc(563)] CreateDirectory C:\Program Files (x86)\reports: Acceso denegado. (0x5)
+[0218/143910.513:ERROR:registration_protocol_win.cc(84)] TransactNamedPipe: Ha terminado la canalización. (0x6D)
+[0218/143910.514:ERROR:crash_report_database_win.cc(563)] CreateDirectory C:\Program Files (x86)\reports: Acceso denegado. (0x5)
+[0218/143910.550:ERROR:crashpad_client_win.cc(660)] crash server failed to launch, no dump captured

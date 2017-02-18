@@ -1,112 +1,141 @@
-@import "compass/css3";
+body{
+  background-color: #A8A8A8;
+  font-family: 'Roboto', sans-serif;
+}
 
-.osx-login {
-  display:inline-block;
-  position:absolute;
+.container{
+  /*border:1px solid white;*/
+  width: 600px;
+  height: 350px;
+  position: absolute;
   top:50%;
   left:50%;
-  width:184px;
-  height:184px;
-  padding:30px 35px;
-  margin:-122px -127px;
-  text-align:left;
-  font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
-  background:#efefef;
-  @include background(linear-gradient(#f4f5f6, #e2e3e5));
-  @include border-radius(5px);
-  @include box-shadow(
-    hsla(0,0,100%,0.5) 0 0 0 1px inset,
-    hsla(0,0,0,0.35) 0 2px 5px 1px
-  );
+  transform: translate(-50%, -50%);
+  display: inline-flex; 
+}
+.backbox{  
+  background-color: #404040;
+  width: 100%;
+  height: 80%;
+  position: absolute;
+  transform: translate(0,-50%);
+  top:50%;
+  display: inline-flex;
 }
 
-.osx-login .avatar {
-  width:88px;
-  height:88px;
-  position:relative;
-  margin:auto auto;
-  background:#fff;
-  @include border-radius(44px);
-  @include background(linear-gradient(#fdfbfe, #c7c7c7));
-  @include box-shadow(
-    hsla(0,0,0,0.35) 0 0 0 1px inset,
-    hsla(0,0,0,0.05) 0 1px 1px 1px,
-    hsla(0,0,0,0.1) 0 0 4px 0
-  );
-  
-  &:before {
-    content:'';
-    width:80px;
-    height:80px;
-    top:4px;
-    left:4px;
-    background:url("http://0.gravatar.com/avatar/bc13eedc2642303b1a2251a4da7f157e?s=200") center;
-    position:absolute;
-    @include background-size(cover);
-    @include border-radius(40px);
-    @include box-shadow(
-      hsla(0,0,0,0.4) 0 0 0 2px inset
-    );
-  }
-    
-  &:after {
-    content:'';
-    width:38px;
-    height:76px;
-    position:absolute;
-    left:12px;
-    top:-7px;
-    @include background(linear-gradient(hsla(0,0,100%,0.3), hsla(0,0,100%,0.1) 25%, hsla(0,0,100%,0)));
-    @include border-left-radius(38px);
-    @include transform(rotate(45deg));
-  }
+.frontbox{
+  background-color: white;
+  border-radius: 20px;
+  height: 100%;
+  width: 50%;
+  z-index: 10;
+  position: absolute;
+  right:0;
+  margin-right: 3%;
+  margin-left: 3%;
+  transition: right .8s ease-in-out;
 }
 
-
-.osx-login .name {
-  width:100%;
-  text-align:center;
-  font-size:0.82em;
-  margin-top:13px;
+.moving{
+  right:45%;
 }
 
-.osx-login .password {
-  width:100%;
-  font-size:0.8em;
-  margin-top:15px;
-  padding:5px 2px;
-  border:1px solid hsla(0,0,0,.3);
-  @include border-radius(3px);
-  @include box-shadow(
-    hsla(0,0,0,0.15) 0 1px 2px 0 inset,
-    hsla(0,0,100%,0.3) 0 1px 0 0
-  );
-  
-  &:focus {
-    outline:0;
-    border:1px solid #77a7c0;
-    @include box-shadow(
-      hsla(206%,80%,40%,0.5) 0 0 3px 1px,
-      hsla(206%,80%,40%,0.5) 0 0 2px 1px inset
-    );
-  }
-    
-  &::-webkit-input-placeholder {
-    color:hsla(0,0,20%,0.5);
-  }
-  &:-moz-placeholder {
-    color:hsla(0,0,20%,0.5);  
-  }
-  &::-moz-placeholder {
-    color:hsla(0,0,20%,0.5);
-  }
-  &:-ms-input-placeholder {
-    color:hsla(0,0,20%,0.5); 
-  }
+.loginMsg, .signupMsg{
+  width: 50%;
+  height: 100%;
+  font-size: 15px;
+  box-sizing: border-box;
 }
 
-body {
-  text-align:center;
- background:url("http://f.cl.ly/items/0m1s041Z2e0E1J2v2I3M/Galaxy_dark2.jpg") no-repeat center center fixed;
-  @include background-size(cover);
+.loginMsg .title,
+.signupMsg .title{
+  font-weight: 300;
+  font-size: 23px;
+}
+
+.loginMsg p,
+.signupMsg p {
+  font-weight: 100;
+}
+
+.textcontent{
+  color:white;
+  margin-top:65px;
+  margin-left: 12%;
+}
+
+.loginMsg button,
+.signupMsg button {
+  background-color: #404040;
+  border: 2px solid white;
+  border-radius: 10px;
+  color:white;
+  font-size: 12px;
+  box-sizing: content-box;
+  font-weight: 300;
+  padding:10px;
+  margin-top: 20px;
+}
+
+/* front box content*/
+.login, .signup{
+  padding: 20px;
+  text-align: center;
+}
+
+.login h2,
+.signup h2 {
+  color: #35B729;
+  font-size:22px;
+}
+
+.inputbox{
+  margin-top:30px; 
+}
+.login input, 
+.signup input {
+  display: block;
+  width: 100%;
+  height: 40px;
+  background-color: #f2f2f2;
+  border: none;
+  margin-bottom:20px;
+  font-size: 12px;
+}
+
+.login button,
+.signup button{
+  background-color: #35B729;
+  border: none;
+  color:white;
+  font-size: 12px;
+  font-weight: 300;
+  box-sizing: content-box;
+  padding:10px;
+  border-radius: 10px;
+  width: 60px;
+  position: absolute;
+  right:30px;
+  bottom: 30px;
+  cursor: pointer;
+}
+
+/* Fade In & Out*/
+.login p {
+  cursor: pointer;
+  color:#404040;
+  font-size:15px;
+}
+
+.loginMsg, .signupMsg{
+  /*opacity: 1;*/
+  transition: opacity .8s ease-in-out;
+}
+
+.visibility{
+  opacity: 0;
+}
+
+.hide{
+  display: none;
 }
