@@ -1,31 +1,47 @@
-var $loginMsg = $('.loginMsg'),
-  $login = $('.login'),
-  $signupMsg = $('.signupMsg'),
-  $signup = $('.signup'),
-  $frontbox = $('.frontbox');
+/* ------------------------------------ Click on login and Sign Up to  changue and view the effect
+---------------------------------------
+*/
 
-$('#switch1').on('click', function() {
-  $loginMsg.toggleClass("visibility");
-  $frontbox.addClass("moving");
-  $signupMsg.toggleClass("visibility");
+function cambiar_login() {
+  document.querySelector('.cont_forms').className = "cont_forms cont_forms_active_login";  
+document.querySelector('.cont_form_login').style.display = "block";
+document.querySelector('.cont_form_sign_up').style.opacity = "0";               
 
-  $signup.toggleClass('hide');
-  $login.toggleClass('hide');
-})
+setTimeout(function(){  document.querySelector('.cont_form_login').style.opacity = "1"; },400);  
+  
+setTimeout(function(){    
+document.querySelector('.cont_form_sign_up').style.display = "none";
+},200);  
+  }
 
-$('#switch2').on('click', function() {
-  $loginMsg.toggleClass("visibility");
-  $frontbox.removeClass("moving");
-  $signupMsg.toggleClass("visibility");
+function cambiar_sign_up(at) {
+  document.querySelector('.cont_forms').className = "cont_forms cont_forms_active_sign_up";
+  document.querySelector('.cont_form_sign_up').style.display = "block";
+document.querySelector('.cont_form_login').style.opacity = "0";
+  
+setTimeout(function(){  document.querySelector('.cont_form_sign_up').style.opacity = "1";
+},100);  
 
-  $signup.toggleClass('hide');
-  $login.toggleClass('hide');
-})
+setTimeout(function(){   document.querySelector('.cont_form_login').style.display = "none";
+},400);  
+
+
+}    
+
+
+
+function ocultar_login_sign_up() {
+
+document.querySelector('.cont_forms').className = "cont_forms";  
+document.querySelector('.cont_form_sign_up').style.opacity = "0";               
+document.querySelector('.cont_form_login').style.opacity = "0"; 
 
 setTimeout(function(){
-  $('#switch1').click()
-},1000)
+document.querySelector('.cont_form_sign_up').style.display = "none";
+document.querySelector('.cont_form_login').style.display = "none";
+},500);  
+  
+  }
 
-setTimeout(function(){
-  $('#switch2').click()
-},3000)
+
+
