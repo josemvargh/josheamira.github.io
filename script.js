@@ -1,44 +1,22 @@
-/* ------------------------------------ Click on login and Sign Up to  changue and view the effect
----------------------------------------
-*/
+$('#login-button').click(function(){
+  $('#login-button').fadeOut("slow",function(){
+    $("#container").fadeIn();
+    TweenMax.from("#container", .4, { scale: 0, ease:Sine.easeInOut});
+    TweenMax.to("#container", .4, { scale: 1, ease:Sine.easeInOut});
+  });
+});
 
-function cambiar_login() {
-  document.querySelector('.cont_forms').className = "cont_forms cont_forms_active_login";  
-document.querySelector('.cont_form_login').style.display = "block";
-document.querySelector('.cont_form_sign_up').style.opacity = "0";               
+$(".close-btn").click(function(){
+  TweenMax.from("#container", .4, { scale: 1, ease:Sine.easeInOut});
+  TweenMax.to("#container", .4, { left:"0px", scale: 0, ease:Sine.easeInOut});
+  $("#container, #forgotten-container").fadeOut(800, function(){
+    $("#login-button").fadeIn(800);
+  });
+});
 
-setTimeout(function(){  document.querySelector('.cont_form_login').style.opacity = "1"; },400);  
-  
-setTimeout(function(){    
-document.querySelector('.cont_form_sign_up').style.display = "none";
-},200);  
-  }
-
-function cambiar_sign_up(at) {
-  document.querySelector('.cont_forms').className = "cont_forms cont_forms_active_sign_up";
-  document.querySelector('.cont_form_sign_up').style.display = "block";
-document.querySelector('.cont_form_login').style.opacity = "0";
-  
-setTimeout(function(){  document.querySelector('.cont_form_sign_up').style.opacity = "1";
-},100);  
-
-setTimeout(function(){   document.querySelector('.cont_form_login').style.display = "none";
-},400);  
-
-
-}    
-
-
-
-function ocultar_login_sign_up() {
-
-document.querySelector('.cont_forms').className = "cont_forms";  
-document.querySelector('.cont_form_sign_up').style.opacity = "0";               
-document.querySelector('.cont_form_login').style.opacity = "0"; 
-
-setTimeout(function(){
-document.querySelector('.cont_form_sign_up').style.display = "none";
-document.querySelector('.cont_form_login').style.display = "none";
-},500);  
-  
-  }
+/* Forgotten Password */
+$('#forgotten').click(function(){
+  $("#container").fadeOut(function(){
+    $("#forgotten-container").fadeIn();
+  });
+});
